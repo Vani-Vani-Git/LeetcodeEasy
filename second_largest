@@ -1,0 +1,20 @@
+class second_largest {
+    public int getSecondLargest(int[] arr) {
+        int largest = Integer.MIN_VALUE, SecondLargest = Integer.MIN_VALUE;
+        for(int num:arr) {
+            if(num>largest) {
+                SecondLargest = largest;
+                largest = num;
+            }
+            else if(num>SecondLargest && num != largest) {
+                SecondLargest = num;
+            }
+        }
+        if(SecondLargest == Integer.MIN_VALUE){
+            return -1;
+        }
+        else {
+            return SecondLargest;
+        }
+    }
+}
